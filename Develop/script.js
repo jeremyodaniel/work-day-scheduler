@@ -5,7 +5,23 @@ $("#currentDay").html(currentDate);
 
 //WHEN I scroll down
 //THEN I am presented with time blocks for standard business hours
+ var currentHour = moment().hours();
 
+$(".time-block").each(function(index) {
+    var block = $(this);
+    var blockId = block.attr("id");
+    var blockHour = blockId.split("-")[1];
+
+    if (currentHour == blockHour) {
+        $(this)>addClass("present");
+    }
+    else if (blockHour < currentHour) {
+        $(this).addClass("past");
+    }
+    else if (blockHour > currentHour) {
+        $(this).addClass("future");
+    }
+});
 
 //WHEN I view the time blocks for that day
 //THEN each time block is color-coded to indicate whether it is in the past, present, or future
