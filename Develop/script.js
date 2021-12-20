@@ -6,6 +6,7 @@ $("#currentDay").html(currentDate);
 //WHEN I scroll down
 //THEN I am presented with time blocks for standard business hours
 
+
 //WHEN I view the time blocks for that day
 //THEN each time block is color-coded to indicate whether it is in the past, present, or future
 
